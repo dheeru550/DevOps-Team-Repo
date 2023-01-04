@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('firststage') {
+            steps {
+                git 'https://github.com/dheeru550/Development-Team-Repo.git'
+            }
+        }
+        stage('secondstage') {
+            steps {
+               sh 'mvn clean -f pom.xml'
+            }
+        }
+    }
+}
