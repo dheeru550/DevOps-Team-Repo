@@ -9,7 +9,7 @@ pipeline {
         }
         stage('secondstage') {
             steps {
-               sh 'mvn package -f pom.xml'
+               sh 'mvn clean -f pom.xml'
             }
         }
     }
