@@ -14,7 +14,7 @@ pipeline {
         }
         stage('pushing') {
             steps {
-               nexusArtifactUploader artifacts: [[artifactId: 'web', classifier: '', file: 'target/web.war', type: 'war']], credentialsId: 'dheeraj', groupId: 'project', nexusUrl: '44.193.211.138:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '2.1'
+               nexusArtifactUploader artifacts: [[artifactId: 'web', classifier: '', file: 'target/web.war', type: 'war']], credentialsId: 'dheeru', groupId: 'project', nexusUrl: '44.193.211.138:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '2.1'
             }
         }
     }
