@@ -19,7 +19,7 @@ pipeline {
         }
          stage('Download artifact'){
        steps {
-        sh 'wget http://52.23.208.165:8081/nexus/content/repositories/releases/project/web/1.8/web-1.8.war'
+        sh 'wget http://44.200.239.207:8081//nexus/content/repositories/releases/project/web/2.2/web-2.2.war'
        }     
         }     
        
