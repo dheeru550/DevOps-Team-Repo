@@ -14,18 +14,18 @@ pipeline {
         }
         stage('pushing') {
             steps {
-               nexusArtifactUploader artifacts: [[artifactId: 'web', classifier: '', file: 'target/web.war', type: 'war']], credentialsId: 'dheeru', groupId: 'project', nexusUrl: '44.200.239.207:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '2.4'
+               nexusArtifactUploader artifacts: [[artifactId: 'web', classifier: '', file: 'target/web.war', type: 'war']], credentialsId: 'dheeru', groupId: 'project', nexusUrl: '44.200.239.207:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '2.5'
             }
         }
          stage('Download artifact'){
        steps {
-        sh 'wget http://44.200.239.207:8081/nexus/content/repositories/releases/project/web/2.4/web-2.4.war'
+        sh 'wget http://44.200.239.207:8081/nexus/content/repositories/releases/project/web/2.5/web-2.5.war'
        }     
         }     
        
         stage('Deploy Code In Tomcat Dev Server-1') {
             steps {
-               sh 'cp web**.*.war /home/jenkins/apache-tomcat-8.5.84/webapps'
+               sh 'cp web**.*.war /home/dheeraj/apache-tomcat-8.5.84/webapps'
             }
         }
     }
